@@ -1,0 +1,14 @@
+dependencies:
+  override:
+    - echo "Nada."
+
+test:
+  override:
+    - echo "Nada."
+
+deployment:
+  master:
+    branch: feature/build-clone
+    commands:
+      - git remote add dist https://altdeployer:$GH_TOKEN@github.com/mull/test.git
+      - git push dist master -f
