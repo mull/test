@@ -1,0 +1,17 @@
+machine:
+  node:
+    version: 2.5.0
+
+dependencies:
+  override:
+    - npm install -g rimraf eslint babel browserify webpack uglifyjs
+
+test:
+  override:
+    - echo "Nada."
+
+deployment:
+  master:
+    branch: feature/build-clone
+    commands:
+      - bash build-and-push.sh
